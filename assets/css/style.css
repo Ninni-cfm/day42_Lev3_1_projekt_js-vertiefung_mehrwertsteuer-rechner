@@ -1,0 +1,125 @@
+/*****************************************************************************
+    Some basic styling
+*/
+
+/* Hard reset: no margins, no paddings for all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Some variable definitions */
+html {
+    --primaryColor: black;
+    --secondaryColor: white;
+
+    --primaryBackground: #f3f6f8;
+    --secondaryBackground: #236ca3;
+
+    --borderColor: #666;
+}
+
+/* Setup the body */
+body {
+    min-height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*****************************************************************************
+    Some styles often used
+*/
+.bgColor {
+    background-color: var(--primaryBackground);
+}
+.padding {
+    padding: 10px 10px;
+}
+
+/*****************************************************************************
+    The basic user interface
+*/
+form {
+    width: 400px;
+    border: 1px solid var(--borderColor);
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+    The "header" 
+*/
+h2 {
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: var(--secondaryBackground);
+    color: var(--secondaryColor);
+}
+
+/* Margins for all containers */
+div {
+    margin: 5px 0;
+}
+
+/* Paddings for all paragraphs */
+p {
+    padding: 5px 0;
+}
+
+/* Distance from tax rate 2 to tax rate 1 */
+#taxRate2 {
+    margin-left: 20px;
+}
+
+/* Common styles for the input elements  */
+input {
+    padding: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    border: 1px solid var(--borderColor);
+    border-radius: 5px;
+    outline: none;
+}
+
+/* The input field for the money value */
+#moneyValue {
+    text-align: right;
+    width: 20%;
+}
+
+/* The button to start the tax calculation */
+input[type="button"] {
+    width: calc(100% - 20px);
+    margin: 1% 10px;
+    background: var(--secondaryBackground);
+    color: var(--secondaryColor);
+}
+input[type="button"]:hover {
+    box-shadow: 0px 0px 5px var(--borderColor);
+}
+
+/*----------------------------------------------------------------------------
+    The container for the results
+*/
+.result {
+    border-top: 1px solid var(--borderColor);
+}
+/* A small headline */
+h5 {
+    color: #236ca3;
+    font-weight: 800;
+}
+
+/* numeric values should be right-aligned */
+#taxValue,
+#finalValue {
+    width: 25%;
+    text-align: right;
+}
+
+/*****************************************************************************
+    That's all, folks!
+*/

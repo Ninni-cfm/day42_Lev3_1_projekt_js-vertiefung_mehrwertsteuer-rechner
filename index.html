@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Mehrwertsteuer-Rechner</title>
+</head>
+
+<body>
+
+    <form action="" onsubmit="return false;">
+
+        <!-- ************************************************************* -->
+        <!-- header -->
+        <h2 class="padding">Mehrwertsteuer-Rechner</h2>
+
+
+        <!-- ************************************************************* -->
+        <!-- Calculation type selection -->
+        <div class="bgColor padding">
+            <p>Was soll berechnet werden?</p>
+            <p><input type="radio" name="type" id="netToBrutto" checked onclick="calculationTypeChanged()">
+                &nbsp;Mehrwertsteuer aufschlagen (Netto zu Brutto)
+            </p>
+            <p><input type="radio" name="type" id="bruttoToNet" onclick="calculationTypeChanged()">
+                &nbsp;Mehrwertsteuer abziehen (Brutto zu Netto)</p>
+        </div>
+
+
+        <!-- ************************************************************* -->
+        <!-- Tax rate selection -->
+        <div class=" bgColor padding">
+            <p>Mehrwertsteuersatz</p>
+            <p>
+                <input type="radio" name="tax" id="taxRate1" checked>&nbsp;
+                <span id="taxRateValue1">19%</span>
+                <input type="radio" name="tax" id="taxRate2">&nbsp;
+                <span id="taxRateValue2">7%</span>
+            </p>
+        </div>
+
+
+        <!-- ************************************************************* -->
+        <!-- Input field for the money -->
+        <div class=" bgColor padding">
+            <p id="calculationType"><span class="required">*</span></p>
+            <input type="text" name="money" id="moneyValue" value="0.00" onchange="moneyValueChanged()">&nbsp;
+            <span id="currencySign"></span>
+        </div>
+
+
+        <!-- ************************************************************* -->
+        <!-- Input field for the money -->
+        <input type="button" value="BERECHNEN" onclick="calculate()">
+
+
+        <!-- ************************************************************* -->
+        <!-- The result area: -->
+        <div class="result">
+
+            <!-- A small headline -->
+            <h5 class="padding">Ergebnis</h5>
+
+            <!-- The taxes part ... -->
+            <div class="bgColor padding">
+                <p>Mehrwertsteuerbetrag</p>
+                <p id="taxValue"></p>
+            </div>
+
+            <!-- ... and the brutto or net value part -->
+            <div class="bgColor padding">
+                <p id="finalText">xxx</p>
+                <p id="finalValue"></p>
+            </div>
+        </div>
+
+    </form>
+
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
